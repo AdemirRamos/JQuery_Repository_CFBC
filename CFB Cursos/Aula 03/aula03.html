@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 - As Formas Corretas de Inserir o Código JQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+        //jQuery('p').text('CFB Cursos.')
+
+        //JQ segue a mesma lógica de JS.
+        //Sendo assim, o código acima não funcionará pois o elemento a ser manipulado ainda não foi renderizado.
+        //A solução para esse problema é:
+
+        //1ª: Posicionar o "script" após o conteúdo (em "body"); 2ª:
+
+        jQuery(document).ready(execução)
+
+        //Para "ready", é passada a função a ser executada. - P. S.: "document", para ser selecionado, não demanda aspas.
+        
+        //Criando a função que irá ser selecionada:
+
+        function execução() {
+            jQuery('#texto').text('CFB Cursos.')
+        }
+
+        //Por alguma razão, o "ready" não funciona com uma "arrow function".
+
+        //Toda a rotina também pode ser passada para "ready" através de uma função:
+
+        jQuery(document).ready(() => {
+            jQuery('#texto_2').text('Segundo texto de teste.')
+        })
+
+        //No caso acima, tanto uma "arrow function" quanto uma função anônima "normal" funcionam.
+
+    </script>
+
+</head>
+
+<body>
+    
+    <p id="texto"></p>
+    <p id="texto_2"></p>
+
+</body>
+
+    <script></script>
+
+</html>
