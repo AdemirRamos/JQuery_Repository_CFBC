@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04 - Eventos Em JQuery</title>
+
+    <style>
+
+        #bloco {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 2px solid blue;
+        }
+
+    </style>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    
+    <div id="bloco"></div>
+
+    <p id="texto"></p>
+
+</body>
+
+    <script>
+
+        $('#texto').text('CFB Cursos.')
+        
+        $('#bloco').click(() => {
+            $('#texto').text('Você clicou no bloco acima.') //"text()" é correspondente ao "innerHTML" JS.
+            $('#texto').css('color', 'coral')
+            $('#texto').css('text-shadow', '1px 1px 1px black')
+            $('#texto').css('font-size', '18px')
+            $('#texto').css('font-weight', 'bolder')
+        })
+
+        $('#bloco').mouseenter(() => {
+            $('#texto').text('Mouse dentro do bloco.')
+            $('#texto').css('color', 'skyblue')
+            $('#texto').css('text-shadow', '1px 1px 1px black')
+            $('#texto').css('font-size', '18px')
+            $('#texto').css('font-weight', 'bolder')
+        })
+
+        $('#bloco').mouseleave(() => {
+            $('#texto').text('Mouse fora do bloco.')
+            $('#texto').css('color', 'darkslateblue')
+            $('#texto').css('text-shadow', '1px 1px 1px black')
+            $('#texto').css('font-size', '18px')
+            $('#texto').css('font-weight', 'bolder')
+        })
+
+    </script>
+
+</html>
