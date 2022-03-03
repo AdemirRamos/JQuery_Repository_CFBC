@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - Primeiros Códigos Com o JQuery</title>
+
+    <style>
+
+        input, button {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+    </style>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    
+    <div id="cálculo">
+
+        <label for="">Valor 01</label>
+        <input type="text" id="valor_1" value="0">
+
+        <label for="">Valor 02</label>
+        <input type="text" id="valor_2" value="0">
+
+        <label for="">Valor 03</label>
+        <input type="text" id="valor_3" value="0">
+
+        <label for="">Resultado:</label>
+        <input type="text" id="resultado" value="0">
+
+        <button id="botão_somar_js">Somar JS</button>
+        <button id="botão_somar_jq">Somar JQ</button>
+
+    </div>
+
+</body>
+
+    <script>
+
+        //Processo com Javascript:
+
+        let botão_somar_js = document.getElementById('botão_somar_js').addEventListener('click', () => {
+            let valor_1 = document.getElementById('valor_1').value
+            let valor_2 = document.getElementById('valor_2').value
+            let valor_3 = document.getElementById('valor_3').value
+
+            let soma = Number(valor_1) + Number(valor_2) + Number(valor_3)
+            let resultado = document.getElementById('resultado')
+
+            //Como adicionar o valor de uma variável a um "input":
+
+            resultado.value = soma
+
+            /*
+            Reduções do código:
+
+            1ª:
+
+            let resultado = document.getElementById('resultado').value = Number(valor_1) + Number(valor_2) + Number(valor_3)
+            
+            2ª:
+            
+            let resultado = 
+            document.getElementById('resultado').value = 
+            Number(document.getElementById('valor_1').value) + 
+            Number(document.getElementById('valor_2').value) + 
+            Number(document.getElementById('valor_3').value)
+            */
+
+            //Processo com JQuery:
+
+            //Lembrando que a seleção pode ser feita tanto com o "$" ou com "JQuery":
+        })
+
+        $('#botão_somar_jq').click(function() {
+            let valor_1 = Number($('#valor_1').val())
+            let valor_2 = Number($('#valor_2').val())
+            let valor_3 = Number($('#valor_3').val())
+            let soma = valor_1 + valor_2 + valor_3
+            let resultado = $('#resultado').val(soma) //Aqui, a atribuição a uma variável é facultativa.
+        })
+
+    </script>
+
+</html>
