@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08 - Entendendo Como Usar o Método "target" ("event.target") em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    
+    <p id="texto_01">CFB Cursos.</p>
+    <div id="texto_02">Curso de jQuery.</div>
+    <p id="resultado"></p>
+    <p id="resultado_02"></p>
+
+</body>
+
+    <script>
+
+        $('#texto_01').click((event) => {
+            $('#resultado').text(`X: ${event.pageX} | Y: ${event.pageY} | Objeto clicado: ${event.target.nodeName}.`)
+        })
+
+        $('#texto_02').click(() => {
+            $('#resultado').text(`X: ${event.pageX} | Y: ${event.pageY} | Objeto clicado: ${event.target.nodeName}.`)
+        })
+
+        $(document).click((event) => {
+            $('#resultado_02').text(`Objeto clicado: ${event.target.tagName}.`)
+
+            //Também é possível se obter o "id" entre outras coisas através de "event.target".
+
+            if (event.target.id == 'resultado_02') {
+                alert('Olá!')
+            }
+        })
+
+    </script>
+
+</html>
