@@ -35,51 +35,51 @@
 
     <script>
 
-        $('#texto').text('CFB Cursos.')
+        jQuery('#texto').text('CFB Cursos.')
         
-        $('#bloco').on('click dblclick', () => {//"on" nos permite associar diferentes eventos a uma rotina.
-            $('#texto').text('Você clicou no 1ª bloco acima.')
-            $('#texto').css('font-weight', 'bolder')
-            $('#texto').css('color', 'coral')
-            $('#texto').css('text-shadow', '1px 1px 1px black')
-            $('#texto').css('font-size', '18px')
+        jQuery('#bloco').on('click dblclick', () => {//"on" nos permite associar diferentes eventos a uma rotina.
+            jQuery('#texto').text('Você clicou no 1ª bloco acima.')
+            jQuery('#texto').css('font-weight', 'bolder')
+            jQuery('#texto').css('color', 'coral')
+            jQuery('#texto').css('text-shadow', '1px 1px 1px black')
+            jQuery('#texto').css('font-size', '18px')
         })
 
         //Vários eventos com diferentes comportamentos:
 
-        $('#bloco_2').on({
+        jQuery('#bloco_2').on({
             click: () => {
-                $('#texto').text('Você clicou no 2ª bloco acima.')
-                $('#texto').css('font-weight', 'bolder')
-                $('#texto').css('color', 'coral')
-                $('#texto').css('text-shadow', '1px 1px 1px black')
-                $('#texto').css('font-size', '18px')
+                jQuery('#texto').text('Você clicou no 2ª bloco acima.')
+                jQuery('#texto').css('font-weight', 'bolder')
+                jQuery('#texto').css('color', 'coral')
+                jQuery('#texto').css('text-shadow', '1px 1px 1px black')
+                jQuery('#texto').css('font-size', '18px')
             },
 
             //É importante separar os eventos com vírgulas - para que eles funcionem corretamente.
 
             mouseenter: () => {
-                $('#texto').text('O cursor do mouse entrou no 2ª bloco.')
-                $('#texto').css('font-weight', 'bolder')
-                $('#texto').css('color', 'steelblue')
-                $('#texto').css('text-shadow', '1px 1px 1px black')
-                $('#texto').css('font-size', '18px')
+                jQuery('#texto').text('O cursor do mouse entrou no 2ª bloco.')
+                jQuery('#texto').css('font-weight', 'bolder')
+                jQuery('#texto').css('color', 'steelblue')
+                jQuery('#texto').css('text-shadow', '1px 1px 1px black')
+                jQuery('#texto').css('font-size', '18px')
             },
 
             mouseleave: () => {
-                $('#texto').text('O cursor do mouse saiu no 2ª bloco.')
-                $('#texto').css('font-weight', 'bolder')
-                $('#texto').css('color', 'darkslateblue')
-                $('#texto').css('text-shadow', '1px 1px 1px black')
-                $('#texto').css('font-size', '18px')
+                jQuery('#texto').text('O cursor do mouse saiu do 2ª bloco.')
+                jQuery('#texto').css('font-weight', 'bolder')
+                jQuery('#texto').css('color', 'darkslateblue')
+                jQuery('#texto').css('text-shadow', '1px 1px 1px black')
+                jQuery('#texto').css('font-size', '18px')
             },
 
             dblclick: () => {
-                $('#texto').text('Você deu um clique duplo no 2ª bloco.')
-                $('#texto').css('font-weight', 'bolder')
-                $('#texto').css('color', 'salmon')
-                $('#texto').css('text-shadow', '1px 1px 1px black')
-                $('#texto').css('font-size', '18px')
+                jQuery('#texto').text('Você deu um clique duplo no 2ª bloco.')
+                jQuery('#texto').css('font-weight', 'bolder')
+                jQuery('#texto').css('color', 'salmon')
+                jQuery('#texto').css('text-shadow', '1px 1px 1px black')
+                jQuery('#texto').css('font-size', '18px')
             }
         })
 
