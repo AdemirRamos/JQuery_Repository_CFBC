@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09 - Descobrindo Quem Disparou o Evento e Qual Evento Foi Disparado</title>
+    
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    
+    <p id="texto_01">CFB Cursos.</p>
+    <p id="resultado"></p>
+
+</body>
+
+    <script>
+
+        jQuery(document).on({
+            click: () => {
+                jQuery('#resultado').text(`Evento disparado: ${event.type}, quem disparou o evento: ${event.which}.`)
+            },
+
+            keydown: () => {
+                jQuery('#resultado').text(`Evento disparado: ${event.type} | Quem disparou o evento: ${event.which}.`)
+
+                if (event.which == 13) {
+                    alert('Tecla "enter" pressionada.')
+                }
+            }
+        })
+
+    </script>
+
+</html>
