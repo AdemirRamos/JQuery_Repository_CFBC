@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 07 - Entendendo Como Usar o "Objeto Event" em JQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    
+    <p id="texto"></p>
+
+</body>
+
+    <script>
+
+        jQuery(document).mousemove((event) => {
+            jQuery('#texto').text(`Posição X do mouse: ${event.pageX}px; Posição Y do mouse: ${event.pageY}px.`)
+
+            let page_x = event.pageX
+            let page_y = event.pageY
+
+            if (page_x > 500) {
+                console.log('A posição X é maior do que 500.')
+            }
+        })
+
+    </script>
+
+</html>
