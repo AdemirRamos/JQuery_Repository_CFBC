@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 - Aprendendo a Parar a Propagação do Evento</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        div{
+            border: 1px solid red;
+            padding: 10px;
+        }
+
+        p {
+            border: 1px solid blue;
+            padding: 10px;
+        }
+
+        span {
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div>
+
+        <p>
+            
+            CFB Cursos.<br><br><br>
+        
+            <span>Curso de jQuery</span>
+
+        </p>
+
+    </div>
+
+</body>
+
+    <script>
+
+        $('div').click(() => {
+            alert('Evento disparado (na DIV).')
+
+            //Desta maneira, o evento será propagado para todos os filhos de "div".
+        })
+
+        $('p').click(() => {
+            event.stopPropagation();alert('Evento disparado (no P).')
+        })
+
+        $('span').click(() => {
+            event.stopPropagation();alert('Evento disparado (no SPAN).')
+
+            //Todos os eventos anteriores serão disparados - salvo uso de "stopPropagation()".
+        })
+
+    </script>
+
+</html>
