@@ -53,11 +53,11 @@
             //Desta maneira, o evento será propagado para todos os filhos de "div".
         })
 
-        $('p').click(() => {
+        $('p').click((event) => {
             event.stopPropagation();alert('Evento disparado (no P).')
         })
 
-        $('span').click(() => {
+        $('span').click((event) => {
             event.stopPropagation();alert('Evento disparado (no SPAN).')
 
             //Todos os eventos anteriores serão disparados - salvo uso de "stopPropagation()".
