@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 - Aprendendo Sobre Os Métodos Parent</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    
+    <div>
+
+        <ul>
+
+            <li>
+
+                <h1>CFB Cursos</h1>
+                <span>Curso de jQuery.</span>
+                <p>Seletores Parent.</p>
+                <p id="teste_01">Teste 1.</p>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div style="margin-top: 25px;">
+
+        <ul>
+
+            <li>
+
+                <p id="teste_01">Teste 1.</p>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div style="margin-top: 25px;">
+
+        <ul>
+
+            <li>
+
+                <p id="teste_02">Teste 2.</p>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</body>
+
+    <script>
+
+        jQuery('p').parent().css('border', '1px solid red')
+        jQuery('li').parent().css('border', '1px solid blue')
+        jQuery('ul').parent().css('border', '1px solid green')
+        jQuery('div').parent().css('border', '1px solid yellow')
+        jQuery('body').parent().css('border', '1px solid purple')
+
+        //"parents()" aponta para todos os elementos anteriores hierarquicamente (ao elemento que o recebe):
+
+        jQuery('#teste_01').parents().css('border', '1px solid orange')
+
+        //Já "parentsUntil()" nos permite indicar até quais elementos se extenderá a seleção:
+
+        jQuery('#teste_02').parentsUntil('div').css('border', '1px solid peru')
+
+    </script>
+
+</html>
