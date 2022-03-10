@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 12 - Aprendendo Sobre Os Métodos "children" e "find"</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+
+        <ul>
+
+            <li>CFB Cursos</li>
+            <li>Curso de jQuery</li>
+            <li>Seletores "parent"</li>
+
+        </ul>
+
+        <ul>
+
+            <li>CFB Cursos</li>
+            <li>Curso de jQuery</li>
+            <li>Seletores "parent"</li>
+
+        </ul>
+
+    </div>
+
+</body>
+
+    <script>
+
+        //Apontando para elementos-filho: começamos selecionando o elemento-base:
+
+        $('div').children().css('border', '3px solid red')
+
+        //Assim como "parent()" aponta para o elemento-pai-direto, "children()" aponta para o elemento-filho-direto.
+
+        $('ul').children().css('border', '3px solid blue')
+
+        //"find()" é outra maneira para se apontar para elementos-filho (nos permitindo especificar por quem estamos procurando).
+
+        $('div').find('ul').css('border', '3px solid green')
+
+        //"find()" também nos possibilita escolher qual dos elementos buscados será selecionado:
+
+        $('div').find('ul:first').css('border', '3px solid purple')
+        
+        //Outro valor: "last". "last" nos permite manipular o último elemento selecionado. Exemplo: "find('ul:last')".
+
+        //Selecionando todos os filhos com "find()": "find('*')".
+
+    </script>
+
+</html>
