@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Sobre Os Métodos "siblings", "next" e "prev"</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    
+    <div>
+
+        <span>
+
+            <p>Seletores Irmãos 2</p>
+            <p id="p4">Seletores Irmãos 3</p>
+            <h1>CFB Cursos</h1>
+            <p id="p1">Curso de jQuery</p>
+            <h2>"Siblings"</h2>
+            <p>Seletores Irmãos</p>
+
+        </span>
+
+    </div>
+
+</body>
+
+<script>
+
+    //Elementos à esquerda são os elementos acima, elementos à direita são abaixo.
+
+    jQuery('h1').siblings().css({'border': '1px solid red'})
+
+    //Elementos-irmão: estão no mesmo nível do elemento selecionado.
+
+    //Selecionando um ou mais irmão (s) específico (s):
+    
+    jQuery('h1').siblings('p').css({'border': '1px solid blue'})
+
+    //"next()": aponta para o elemento-irmão-direto - o elemento a direita / abaixo do elemento selecionado:
+
+    jQuery('h2').next().css({'border': '1px solid green'})
+
+    //"prev()": aponta para o elemento-irmão à esquerda / acima do elemento selecionado:
+
+    jQuery('#p1').prev().css({'border': '1px solid purple'})
+
+    //Já "prevAll()" aponta para todos os elementos-irmão à esquerda do elemento selecionado:
+
+    jQuery('#p4').prevAll().css({'border': '1px solid yellow'})
+
+    //Também temos os seguintes métodos:
+    
+    // - "prevUntil()": nos permite determinar até onde será extendida a configuração;
+    // - "nextAll()": age da mesma maneira de "prevAll()", porém em relação a todos os elementos à direita do elemento selecionado;
+    // - "nextUntil()": age da mesma maneira de "prevUntil()", porém em relação a todos os elementos à esquerda do elemento selecionado.
+
+</script>
+
+</html>
