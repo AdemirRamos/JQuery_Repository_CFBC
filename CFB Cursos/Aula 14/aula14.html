@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 - Métodos Para Filtragem de Elementos: "first", "eq" e "last"</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        h1 {
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>CFB Cursos</p>
+    <h1>Curso de Canvas</h1>
+
+    <p>Curso de Canvas</p>
+    <h1>youtube.com/cfbcursos</h1>
+
+    <p>youtube.com/cfbcursos</p>
+    <h1>www.cfbcursos.com/br</h1>
+    
+    <p>www.cfbcursos.com/br</p>
+    <h1>www.cfbcursos.com/br</h1>
+
+    <p>Filtrando elementos</p>
+    <h1>Filtrando elementos</h1>
+
+</body>
+
+    <script>
+
+        //"first()" nos permite selecionar o primeiro elemento (de uma sequência de elementos) para se realizar uma determinada filtragem;
+        //"last()" age da mesma maneira, porém em relação ao último elemento da sequência.
+
+        $('p').first().css({'border': '2px solid red', 'background-color': 'burlywood'})
+        $('p').last().css({'border': '2px solid blue', 'background-color': 'darkslateblue'})
+        
+        //Já "eq()" nos permite indicar qual elemento será selecionado para a filtragem:
+        //A indicação do elemento é feita por números e a precedência dos números segue a lógica de "arrays": começa com zero.
+        
+        $('p').eq(1).css({'border': '2px solid green', 'background-color': 'peru'})
+
+    </script>
+
+</html>
