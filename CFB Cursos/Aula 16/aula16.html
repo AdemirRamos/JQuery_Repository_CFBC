@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 16 - Entendendo as Funções "text", "val" e "html"</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    
+    <h1 id="caixa">CFB Cursos</h1>
+    <h1>Curso de jQuery</h1>
+    <h2 id="aula">
+        
+        <strong>Aula 16</strong>
+        <p><em>Olá, mundo</em></p>
+
+    </h2>
+
+    <span id="hover">Resultado: </span><input type="text" id="nome">
+
+</body>
+    
+    <script>
+
+        $('h1').css('font-size', '18px').css({'cursor': 'pointer'})
+        $('h1').not('#caixa').css('margin-bottom', '25px')
+        $('#hover').css({'cursor': 'pointer'})
+        $('#aula').css({'font-size': '18px'}).css({'cursor': 'pointer'})
+
+        $('h1').click(function() {
+            alert(`Texto: "${$(this).text()}".`) //"this" aponta para o elemento clicado. | "text()" == "innerText".
+        })
+
+        //Já "val()", retorna um valor que deve ser usado com elementos de formulário:
+
+        $('#hover').click(function() {
+            alert(`Texto: "${$('#nome').val()}".`)
+        })
+
+        //"html()" == "innerHTML".
+
+        $('#aula').click(function() {
+            alert(`Texto: "${$(this).html()}".`)
+        })
+
+    </script>
+
+</html>
