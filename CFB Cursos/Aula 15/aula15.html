@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15 - Métodos Para Filtragem de Elementos: "filter" e "not"</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        h1 {
+            font-size: 18px;
+            background-color: peru;
+        }
+
+        p {
+            background-color: burlywood;
+            font-weight: bolder;
+        }
+
+        .borda {
+            border: 2px solid red;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p class="borda">CFB Cursos</p>
+    <h1>Curso de Canvas</h1>
+
+    <p>Curso de Canvas</p>
+    <h1>youtube.com/cfbcursos</h1>
+
+    <p>youtube.com/cfbcursos</p>
+    <h1>www.cfbcursos.com/br</h1>
+    
+    <p class="borda">www.cfbcursos.com/br</p>
+    <h1>www.cfbcursos.com/br</h1>
+
+    <p>Filtrando elementos</p>
+    <h1>Filtrando elementos</h1>
+
+</body>
+
+    <script>
+
+        //"filter" nos permite um apontamento mais preciso quanto aos elementos que se deseje manipular:
+
+        jQuery('p').filter('.borda').css({'color': 'blue'})
+
+        //"not" possui o mesmo efeito (porém, nesse caso, indicando quem não será alvo das mudanças):
+
+        jQuery('p').not('.borda').css({'color': 'steelblue'})
+
+    </script>
+
+</html>
