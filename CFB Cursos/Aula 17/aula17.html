@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 17 - Obter e Modificar Valores dos Atributos dos Elementos HTML</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        div {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            display: inline-block
+        }
+
+        .vermelho {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: rgb(124, 1, 1);
+            color: white;
+        }
+
+        .azul {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: rgb(1, 1, 124);
+            color: white;
+        }
+
+        h1 {
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="caixa">
+
+        <h1>CFB Cursos</h1>
+        <p>Curso de jQuery.</p>
+
+    </div>
+
+    <div class="vermelho" id="caixa_2">
+
+        <h1>CFB Cursos</h1>
+        <p>Curso de jQuery.</p>
+
+    </div>
+
+    <div class="azul" id="caixa_3">
+
+        <h1>CFB Cursos</h1>
+        <p>Curso de jQuery.</p>
+
+    </div>
+
+    <section style="display: block; margin-top: 10px;">
+
+        <button id="button_red">Vermelho</button>
+        <button id="button_blue">Azul</button>
+
+    </section>
+
+</body>
+    
+    <script>
+
+        jQuery('#caixa').click(function() {
+            alert(`Atributo selecionado: "${jQuery(this).attr('id')} (id)".`)
+            //Especificando qual o elemento selecionado e qual o atributo buscado.
+
+            alert(`Atributo selecionado: "${jQuery(this).attr('style')} (style)".`)
+            //Para que o atributo "style" seja capturado e passado para o "alert()", ele precisa ser aplicado "inline".
+
+            jQuery('#button_red').click(function() {
+                jQuery('#caixa_2').attr('class', 'azul')
+            })
+
+            jQuery('#button_blue').click(function() {
+                jQuery('#caixa_3').attr('class', 'vermelho')
+            })
+        })
+
+    </script>
+
+</html>
