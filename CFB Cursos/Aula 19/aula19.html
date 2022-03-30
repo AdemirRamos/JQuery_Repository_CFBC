@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Sobre a Função "toggle" em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: #aaa;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="caixa" class="caixa">
+
+        <h1>CFB Cursos</h1>
+        <p>Curso de jQuery.</p>
+
+    </div>
+
+    <button id="mostrar_ocultar">Ocultar</button>
+
+    <script>
+
+        jQuery('#mostrar_ocultar').click(function() {
+            jQuery('#caixa').toggle()
+
+            if (jQuery('#caixa').is(':visible')) {
+                jQuery('#mostrar_ocultar').text('Ocultar')
+            }
+
+            else {
+                jQuery('#mostrar_ocultar').text('Mostrar')
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
