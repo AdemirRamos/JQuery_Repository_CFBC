@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 20 - Aprendendo Sobre a Função "animate" em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: #aaa;
+            padding: 10px;
+            position: absolute;
+            top: 50px;
+            left: 7px;
+        }
+
+        h1 {
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="caixa" class="caixa">
+
+        <h1>CFB Cursos</h1>
+        <p>Curso de jQuery.</p>
+
+    </div>
+
+    <button id="aumentar">Aumentar</button>
+    <button id="diminuir">Diminuir</button>
+    <button id="direita">Direita</button>
+    <button id="esquerda">Esquerda</button>
+
+    <script>
+
+        $('#aumentar').click(function() {
+            //Ambas alterações ocorrem juntas.
+            //Também se pode controlar outros parâmetros da animação (como duração por exemplo).
+
+            $('#caixa').animate({width: '500px', height: '500px'}, {duration: 1000})
+        })
+
+        $('#diminuir').click(function() {
+            //As alterações serão executadas uma após a outra.
+
+            $('#caixa').animate({width: '200px'}, {duration: 200}).animate({height: '200px'}, {duration: 200})
+        })
+
+        $('#direita').click(function() {
+            //Também se pode adicionar "callback functions" ao se completar a animação:
+
+            $('#caixa').animate({left: '500px'}, {duration: 1000, complete: () => {
+                alert('Movimentação concluída.')
+            }})
+        })
+
+        $('#esquerda').click(function() {
+            //Também se pode adicionar "callback functions" ao se completar a animação:
+
+            $('#caixa').animate({left: '7px'}, {duration: 1000, complete: () => {
+                alert('Movimentação concluída.')
+            }})
+        })
+
+    </script>
+
+</body>
+
+</html>
