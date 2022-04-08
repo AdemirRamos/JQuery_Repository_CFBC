@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 22 - Aprendendo Sobre a Função "dealay" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: #008;
+            padding: 10px;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        #botão_aumentar {
+            margin-left: 13px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="caixa" class="caixa">
+
+        <h1>CFB Cursos</h1>
+        <p>Curso de jQuery.</p>
+
+    </div>
+
+    <button id="botão_aumentar">Aumentar</button>
+    <button id="botão_diminuir">Diminuir</button>
+    <button id="botão_mostrar">Mostrar / Ocultar</button>
+
+    <script>
+
+        $('#botão_aumentar').click(function() {
+            $('#caixa').delay(1000).animate({width: '500px'}).delay(1000).animate({height: '500px'})
+        })
+
+        $('#botão_diminuir').click(function() {
+            $('#caixa').delay(1000).animate({width: '200px'}).delay(1000).animate({height: '200px'})
+        })
+
+        $('#botão_mostrar').click(function() {
+            $('#caixa').animate({opacity: 'toggle'}, {duration: 2000})
+        })
+
+    </script>
+
+</body>
+
+</html>
