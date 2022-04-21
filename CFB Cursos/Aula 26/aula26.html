@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 26 - Aprendendo Sobre a Função "finish" Para Finalizar Uma Animação</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="botão_aumentar">Aumentar</button>
+        <button id="botão_diminuir">Diminuir</button>
+
+    </p>
+
+    <p>
+
+        <button id="botão_finalizar">Finalizar</button>
+
+    </p>
+
+    <div id="caixa" class="caixa"></div>
+
+    <script>
+
+        //"finish()" não finaliza a animação, apenas pula para o seu final.
+
+        $('#botão_aumentar').click(function() {
+            $('#caixa').animate({width: '800px'}, 5000) //Caso não se use o "px" após o número, o número pode ir fora das aspas.
+        })
+
+        $('#botão_diminuir').click(function() {
+            $('#caixa').animate({width: 100}, 5000)
+        })
+
+        $('#botão_finalizar').click(function() {
+            $('#caixa').finish()
+        })
+
+    </script>
+
+</body>
+
+</html>
