@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 25 - Aprendendo Sobre a Função "fadeToggle" em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            border: none;
+        }
+
+        .menu {
+            background-color: #ddd;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item_menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #128;
+            color: white;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+
+        .submenu {
+            display: none;
+            border: 1px solid black;
+            width: 100%;
+            height: 54px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item_submenu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 190px;
+            height: 40px;
+            margin: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #128;
+            color: white;
+            text-transform: capitalize;
+            box-sizing: border-box;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="menu" class="menu">
+
+        <div class="item_menu">home</div>
+        <div id="menu_jquery" class="item_menu">jQuery</div>
+        <div id="menu_canvas" class="item_menu">canvas</div>
+        <div id="menu_python" class="item_menu">python</div>
+        <div id="menu_arduino" class="item_menu">arduino</div>
+
+    </div>
+
+    <div id="submenu_jquery" class="submenu">
+
+        <div class="item_submenu">Aulas de jQuery.</div>
+        <div class="item_submenu">Material de jQuery.</div>
+
+    </div>
+
+    <div id="submenu_canvas" class="submenu">
+
+        <div class="item_submenu">Aulas de Canvas.</div>
+        <div class="item_submenu">Material de Canvas.</div>
+
+    </div>
+
+    <div id="submenu_python" class="submenu">
+
+        <div class="item_submenu">Aulas de Python.</div>
+        <div class="item_submenu">Material de Python.</div>
+
+    </div>
+
+    <div id="submenu_arduino" class="submenu">
+
+        <div class="item_submenu">Aulas de Arduino.</div>
+        <div class="item_submenu">Material de Arduino.</div>
+
+    </div>
+
+    <script>
+
+        jQuery('.item_menu').mouseover(function() {
+            jQuery(this).fadeTo(100, 0.6)
+        })
+
+        jQuery('.item_menu').mouseout(function() {
+            jQuery(this).fadeTo(100, 1)
+        })
+
+        jQuery('#menu_jquery').click(function() {
+
+            jQuery('#submenu_jquery').fadeToggle()
+            jQuery('#submenu_jquery').css('display', 'flex')
+        })
+
+        jQuery('#menu_canvas').click(function() {
+
+            jQuery('#submenu_canvas').fadeToggle()
+            jQuery('#submenu_canvas').css('display', 'flex')
+        })
+
+        jQuery('#menu_python').click(function() {
+
+            jQuery('#submenu_python').fadeToggle()
+            jQuery('#submenu_python').css('display', 'flex')
+        })
+
+        jQuery('#menu_arduino').click(function() {
+
+            jQuery('#submenu_arduino').fadeToggle()
+            jQuery('#submenu_arduino').css('display', 'flex')
+        })
+
+    </script>
+
+</body>
+
+</html>
