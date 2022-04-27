@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 28 - Aprendendo Sobre As Funções "slideUp" e "slideDown" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .menu {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        #menus {
+            background-color: #888;
+            display: flex;
+            width: 100%;
+        }
+
+        .botão_menu {
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        #menus {
+            display: flex;
+            width: 100%;
+        }
+
+        #controle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #888;
+            padding: 5px;
+            border-radius: 0, 0, 10px, 10px;
+            margin: auto 0;
+        }
+
+        #controle button {
+            padding: 2.5px;
+            cursor: pointer;
+        }
+
+        #botão_baixo {
+            margin-left: 7px;
+        }
+
+        #mensagem {
+            color: white;
+            font-weight: bolder;
+            text-shadow: 1px 1px 1px black;
+            margin: auto 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="menu" class="menu">
+
+        <div id="menus">
+
+            <button class="botão_menu">Home</button>
+            <button class="botão_menu">Cursos</button>
+            <button class="botão_menu">Material</button>
+            <button class="botão_menu">Contatos</button>
+            <button class="botão_menu">Sobre</button>
+
+        </div>
+
+    </div>
+
+    <div id="controle">
+
+        <button id="botão_cima">Ocultar</button>
+        <button id="botão_baixo">Mostrar</button>
+        <p id="mensagem">Menu Visível</p>
+
+    </div>
+
+    <script>
+
+        $('#botão_cima').click(function() {
+            $('#menus').slideUp(1000, ()=> {
+                $('#mensagem').text('Menu Oculto')
+            })
+        })
+
+        $('#botão_baixo').click(function() {
+            $('#menus').slideDown(1000, ()=> {
+                $('#mensagem').text('Menu Visível')
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>
