@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 30 - Aprendendo Sobre a Função "stop", Parar As Animações Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            box-sizing: border-box;
+            background-color: #800;
+            border: 3px solid #008;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 6px;
+            top: 50px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="animar">Animar</button>
+        <button id="próxima">Próxima</button>
+        <button id="parar">Parar</button>
+        <button id="fim">Fim</button>
+
+    </p>
+
+    <div id="caixa" class="caixa"></div>
+
+    <script>
+
+        //A função "stop" interrompe uma animação específica, imediatamente, e executa próxima animação (caso ela exista).
+
+        $('#animar').click(function() {
+            $('#caixa').animate({left: '800px'}, {duration: 2000})
+            $('#caixa').animate({top: '500px'}, {duration: 2000})
+            $('#caixa').animate({left: '6px'}, {duration: 2000})
+            $('#caixa').animate({top: '50px'}, {duration: 2000})
+        })
+
+        $('#próxima').click(function() {
+            $('#caixa').stop()
+        })
+
+        $('#parar').click(function() {
+            //"stop" pode receber dois parâmetros (boolean's): 1ª: limpar fila ("clear queue"); 2ª: pular para o fim ("jump to end").
+
+            $('#caixa').stop(true, false)
+        })
+
+        $('#fim').click(function() {
+            $('#caixa').stop(false, true)
+        })
+
+    </script>
+
+</body>
+
+</html>
