@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 38 - Usando a Função Clone Para Clonar Elementos Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: #bbb;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .esquerda {
+            padding-left: 10px;
+        }
+
+        .container {
+            background-color: green;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="clonar">Clonar</button>
+
+    </p>
+
+    <div id="caixa" class="caixa">
+
+        <h1 class="esquerda">CFB Cursos - Curso de jQuery</h1>
+
+    </div>
+
+    <div id="container" class="container"></div>
+
+    <script>
+
+        //O método clonar clona um determinado elemento e o posiciona em um determinado local do documento (definido por "appendTo").
+
+        $('#clonar').click(()=> {
+            //$('#caixa').clone().appendTo('body')
+
+            $('#caixa').clone().appendTo('#container')
+        })
+
+    </script>
+
+</body>
+
+</html>
