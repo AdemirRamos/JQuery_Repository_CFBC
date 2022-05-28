@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 43 - Remover atributos e classes com as funções removeAttr e removeClass</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: #bbb;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin-right: 16px;
+        }
+
+        .borda {
+            border: 3px solid black;
+            border-radius: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="posição">Posição</button>
+        <button id="remover_atributo">Remover Atributo</button>
+        <button id="remover_classe">Remover Classe</button>
+        <button id="adicionar_classe" style="margin-bottom: 15px;">Adicionar Classe</button> <span style="display: block;"></span>
+
+        <label for="">Topo:</label>
+        <input type="range" id="top" name="top" min="0" max="500">
+        <label for="">Esquerda:</label>
+        <input type="range" id="esquerda" name="esquerda" min="0" max="500">
+
+    </p>
+
+    <div id="caixa" class="caixa" style="position: absolute; top: 100px; left: 100px; background-color: #800;"></div>
+
+    <script>
+
+        $('#remover_atributo').click(() => {
+            $('#caixa').removeAttr('style') //Remove um determinado atributo. - Atributos: "class", "style", et cetera.
+        })
+
+        $('#remover_classe').click(() => {
+            $('#caixa').removeClass('caixa') //Remove uma determinada classe.
+        })
+
+        $('#adicionar_classe').click(() => {
+            $('#caixa').addClass('caixa') //Adiciona uma determinada classe.
+        })
+
+    </script>
+
+</body>
+
+</html>
