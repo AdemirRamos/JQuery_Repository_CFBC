@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 34 - Removendo Elementos Com As Funções "remove" e "empty" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: #bbb;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .subcaixa {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            margin: 0px 0px 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: xx-large;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="adicionar">Adicionar Elemento</button>
+        <button id="remover">Remover Elemento</button>
+        <button id="conteúdo">Remover Conteúdo</button>
+
+    </p>
+
+    <div id="caixa" class="caixa">
+
+        <div id="d0" class="subcaixa" style="background-color: rgb(255, 255, 255);">0</div>
+
+    </div>
+
+    <script>
+
+        let r, g, b
+        let número = 1
+
+        $('#adicionar').click(()=> {
+            r = Math.round(Math.random() * 255)
+            g = Math.round(Math.random() * 255)
+            b = Math.round(Math.random() * 255)
+
+            $('#caixa').append('<div id=d'+ número +' class="subcaixa" style="background-color: rgb('+ r +', '+ g + ', ' + b +')">'+ número +'</div')
+            número++
+        })
+
+        $('#remover').click(()=> {
+            //$('#caixa').remove() | Resultado: remoção do elemento com id "caixa".
+
+            /*let div = $('#2')
+            $(div).remove() | Resultado: elemina o elemento selecionado.*/
+
+            $(`#d${(número - 1)}`).remove() //Resultado: elemina o elemento selecionado.
+            número--
+        })
+
+        $('#conteúdo').click(()=> {
+            $(`#d${(número - 1)}`).empty() //Resultado: elemina o conteúdo / elemento (s) filho (s) do elemento selecionado.
+            número--
+        })
+
+        $('#conteúdo').click(()=> {
+            $(`#caixa`).empty() //Resultado: elemina todo o conteúdo / elemento (s) filho (s) do elemento selecionado.
+        })
+
+    </script>
+
+</body>
+
+</html>
