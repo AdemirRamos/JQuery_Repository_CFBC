@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Sobre As Funções "append" e "appendTo" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: #bbb;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .subcaixa {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            margin: 0px 0px 10px 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="adicionar">Adicionar</button>
+        <button id="adicionarCinco">Adicionar x5</button>
+        <button id="adicionarTo">Apend To</button>
+
+    </p>
+
+    <div id="caixa" class="caixa"></div>
+
+    <script>
+
+        let r, g, b
+
+        jQuery('#adicionar').click(()=> {
+            r = Math.round(Math.random() * 255)
+            g = Math.round(Math.random() * 255)
+            b = Math.round(Math.random() * 255)
+            
+            jQuery('#caixa').append('<div class="subcaixa" style="background-color: rgb('+ r +', '+ g + ', ' + b +')"></div')
+        })
+
+        jQuery('#adicionarCinco').click(()=> {
+            for(let i = 0; i < 5; i++) {
+                r = Math.round(Math.random() * 255)
+                g = Math.round(Math.random() * 255)
+                b = Math.round(Math.random() * 255)
+                
+                jQuery('#caixa').append('<div class="subcaixa" style="background-color: rgb('+ r +', '+ g + ', ' + b +')"></div')
+            }
+        })
+
+        jQuery('#adicionarTo').click(()=> {
+            r = Math.round(Math.random() * 255)
+            g = Math.round(Math.random() * 255)
+            b = Math.round(Math.random() * 255)
+            
+            //Adição com o método "appendTo()":
+
+            jQuery('<div class="subcaixa" style="background-color: rgb('+ r +', '+ g + ', ' + b +')"></div').appendTo(jQuery('#caixa'))
+        })
+
+    </script>
+
+</body>
+
+</html>
