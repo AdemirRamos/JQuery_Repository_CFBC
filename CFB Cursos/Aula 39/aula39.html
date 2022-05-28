@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 39 - Aprendendo Sobre a Função "deatch" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: #bbb;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .item {
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+            color: white;
+            font-size: large;
+        }
+
+        .cor1 {
+            background-color: #800;
+        }
+
+        .cor2 {
+            background-color: #080;
+        }
+
+        .cor3 {
+            background-color: #008;
+        }
+
+        .cor4 {
+            background-color: #880;
+        }
+
+        .cor5 {
+            background-color: #088;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="resetar">Resetar</button>
+        <button id="mudar">Mudar</button>
+
+    </p>
+
+    <div id="caixa" class="caixa">
+
+        <div id="item0" class="item cor1">1</div>
+        <div id="item1" class="item cor2">2</div>
+        <div id="item2" class="item cor3">3</div>
+        <div id="item3" class="item cor4">4</div>
+        <div id="item4" class="item cor5">5</div>
+
+    </div>
+
+    <div id="caixa_dois" class="caixa"></div>
+
+    <script>
+
+        //"deatch" nos permite desanexar ou remover um determinado elemento de uma determinada estrutura - porém as características do referido elemento serão mantidas.
+
+        let itens = jQuery('.item')        
+        let i = 0
+
+        jQuery('#mudar').click(() => {
+            let item = $(itens[i]).detach()
+            i++
+
+            jQuery('#caixa_dois').append(jQuery(item))
+        })
+
+        jQuery('#resetar').click(() => {
+            for (let i = 0; i < itens.length; i++) {
+                let item = $(itens[i]).detach()
+
+                jQuery('#caixa').append(jQuery(item))
+            }
+
+            i = 0
+        })
+
+    </script>
+
+</body>
+
+</html>
