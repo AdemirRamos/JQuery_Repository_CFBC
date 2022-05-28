@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 40 - Função "hasClass": Como Saber Se Um Elemento Usa Uma Determinada Classe</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixas {
+            display: flex;
+            width: 100%;
+        }
+
+        .caixa {
+            background-color: #bbb;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin-right: 16px;
+        }
+
+        .ocultar {
+            display: none;
+        }
+
+        .botão_fechar {
+            background-color: #800;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .item {
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+            color: white;
+            font-size: large;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="resetar">Resetar</button>
+
+    </p>
+
+    <div id="caixas" class="caixas">
+
+        <div id="caixa1" class="caixa" style="background-color: #800;">
+
+            <button id="fechar1" class="botão_fechar">X</button>
+
+        </div>
+
+        <div id="caixa2" class="caixa" style="background-color: #008;">
+
+            <button id="fechar2" class="botão_fechar">X</button>
+
+        </div>
+
+        <div id="caixa3" class="caixa" style="background-color: #080;">
+
+            <button id="fechar3" class="botão_fechar">X</button>
+
+        </div>
+
+        <div id="caixa4" class="caixa" style="background-color: #880;">
+
+            <button id="fechar4" class="botão_fechar">X</button>
+
+        </div>
+
+        <div id="caixa5" class="caixa" style="background-color: #088;">
+
+            <button id="fechar5" class="botão_fechar">X</button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        //"hasClass": verifica se um elemento tem uma classe ou não; caso sim, a resposta será "true", caso não, "false".
+
+        let itens = $('.caixa')
+
+        $('.botão_fechar').click((e) => {
+            $('#'+ e.target.id).parent().addClass('ocultar')
+        })
+
+        $('#resetar').click(() => {
+            let itens = $('.caixa')
+
+            for (let i = 0; i < itens.length; i++) {
+                let item = $(itens[i])
+
+                if ($(item).hasClass('ocultar')) {
+                    item.removeClass('ocultar')
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
