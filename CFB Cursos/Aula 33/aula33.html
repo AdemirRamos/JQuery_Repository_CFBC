@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 33 - Adicionando Novos Elementos Com As Funções "after" e "before" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: #bbb;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .subcaixa {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            margin: 0px 0px 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: xx-large;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="adicionarAntes">Adicionar Antes</button>
+        <button id="adicionarDepois">Adicionar Depois</button>
+        <button id="textoAntes">Adicionar Texto Antes</button>
+        <button id="textoDepois">Adicionar Texto Depois</button>
+
+    </p>
+
+    <div id="caixa" class="caixa">
+
+        <div class="subcaixa" style="background-color: rgb(255, 255, 255);">0</div>
+
+    </div>
+
+    <div id="caixaDois" class="caixa"></div>
+
+    <script>
+
+        //Diferença entre "after" / "before" X "append(To)" / "prepend(To)": "after" e "before" adicionam um determinado elemento antes e depois (respectivamente) de outro elemento; já "append" e "prepend" fazem a adição antes e depois, respectivamente, porém dentro de um elemento.
+
+        let r, g, b
+        let número = 0
+
+        jQuery('#adicionarAntes').click(()=> {
+            jQuery('#caixa').before('<div class="subcaixa" style="background-color: rgb('+ r +', '+ g + ', ' + b +')">'+ número +'</div')
+            número++
+        })
+
+        jQuery('#adicionarDepois').click(()=> {
+            for(let i = 0; i < 5; i++) {
+                jQuery('#caixa').after('<div class="subcaixa" style="background-color: rgb('+ r +', '+ g + ', ' + b +')">'+ número + '</div')
+                número++
+            }
+        })
+
+        jQuery('#textoAntes').click(()=> {
+            
+            //$('<div class="subcaixa" style="background-color: rgb('+ r +', '+ g + ', ' + b +')">'+ número +'</div>').appendTo($('#caixa'))
+
+            jQuery('#caixaDois').before(' | Curso de jQuery. - Antes | ')
+        })
+
+        jQuery('#textoDepois').click(()=> {
+            jQuery('#caixaDois').after(' | Curso de jQuery. - Depois | ')
+        })
+
+    </script>
+
+</body>
+
+</html>
