@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 41 - Pegando a Posição de um Elemento Com "position top" e "left" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: #bbb;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin-right: 16px;
+        }
+
+        .ajuste {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <p>
+
+        <button id="posição" class="ajuste">Posição</button>
+        <label for="">Topo:</label>
+        <input type="range" id="top" name="top" min="0" max="500">
+        <label for="">Esquerda:</label>
+        <input type="range" id="esquerda" name="esquerda" min="0" max="500">
+
+    </p>
+
+    <div id="caixa" class="caixa" style="position: absolute; top: 100px; left: 100px; background-color: #800;"></div>
+
+    <script>
+
+        //"position" nos permite obter os valores das prorpriedades "top" e "left" de um elemento.
+
+        jQuery('#posição').click(() => {
+            let t = jQuery('#caixa').position().top
+            let l = jQuery('#caixa').position().left
+            alert(`Top: ${t} | Left: ${l}`)
+        })
+
+        jQuery('#top').change((e) => {
+            let valor = document.getElementById(e.target.id).value
+            jQuery('#caixa').css({'top': `${valor}px`})
+        })
+
+        jQuery('#esquerda').change((e) => {
+            let valor = document.getElementById(e.target.id).value
+            jQuery('#caixa').css({'left': `${valor}px`})
+        })
+
+    </script>
+
+</body>
+
+</html>
