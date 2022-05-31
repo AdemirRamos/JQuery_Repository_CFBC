@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 44 - Aprendendo Sobre As Funções "replaceWith" e "replaceAll" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .cor {
+            color: red;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="menu">
+
+        <button id="replace1">Replace All 1</button>
+        <button id="replace2">Replace All 2</button>
+        <button id="replace3">Replace With 1</button>
+        <button id="replace4">Replace With 2</button>
+
+    </div>
+
+    <div>
+
+        <h1 class="cor">CFB Cursos</h1>
+        <h2 class="cor">Curso de jQuery</h2>
+        <h3 class="cor">replaceAll()</h3>
+        <h4 class="cor">replaceWith()</h4>
+
+    </div>
+
+    <script>
+
+        //Ambas as funções que serão vistas nesta aula servem para substituir elementos na página via jQuery.
+
+        //"replaceAll()" faz a substituição do elemento da esquerda pelo da direita.
+        //"replaceWith()" faz a substituição do elemento da direita pelo da esquerda.
+
+       $('#replace1').click(() => {
+        $('<p>Trocado com "replaceAll()".</p>').replaceAll('.cor') //Dentro das aspas vai o local onde a modificação se consumará.
+       })
+
+       $('#replace2').click((e) => {
+        $(`<div>Trocado com "replaceAll()". Conteúdo adicionado: ${$(e.currentTarget).text()}</div>`).replaceAll(e.currentTarget)
+        })
+
+        $('#replace3').click((e) => {
+        $('.cor').replaceWith('<p>Trocado com "replaceWith()".</p>')
+        })
+
+        $('#replace4').click((e) => {
+        $(e.currentTarget).replaceWith(`<div>Trocado com "replaceAll()". Conteúdo adicionado: ${$(e.currentTarget).text()}</div>`)
+        })
+
+        /*Diferença entre "click()" com "arrow function" e "função normal":
+
+        $('#replace1').click((e) => {
+            e.target
+        })
+
+        $('#replace1').click(function(this) {
+            $(this)
+        })*/
+
+    </script>
+
+</body>
+
+</html>
