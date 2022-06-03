@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 46 - Função "wrap" e Função "unwrap" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .pacote {
+            background-color: yellow;
+            border: 2px solid red;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="menu">
+
+        <button id="pacote">Empacotar / Desempacotar</button>
+        <button id="wrapAll">Empacotar Tudo</button>
+        <button id="wrapLater">Empacotar Depois</button>
+
+    </div>
+
+    <p>CFB Cursos</p>
+    <p>CFB Cursos</p>
+    <p>CFB Cursos</p>
+    <p>CFB Cursos</p>
+    <p>CFB Cursos</p>
+
+    <script>
+
+        let p = $('p')
+
+        $('#pacote').click(() => {
+            if (p.parent().is('div')) { //Tradução: se o "parent" dos "elementos p" for uma "div".
+                p.unwrap()
+            }
+
+            else {
+                p.wrap('<div class="pacote"></div>')
+            }
+
+            //O método "wrap()" empacota os elementos (selecionados) individualmente.
+        })
+
+        $('#wrapAll').click(() => {
+            p.wrapAll('<div class="pacote"></div>')
+
+            //Já o método "wrapAll()" empacota todos os elementos selecionados.
+        })
+
+        $('#wrapLater').click(() => {
+            p.wrapInner('<div class="pacote"></div>')
+
+            //Por fim, "wrapInner()" empacota dentro (e não fora, como seus antecessores) do elemento selecionado.
+        })
+
+    </script>
+
+</body>
+
+</html>
