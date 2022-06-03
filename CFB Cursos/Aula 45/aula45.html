@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 45 - Aprendendo Sobre As Funções "scrollTop" e "scrollLeft" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .cor {
+            color: red;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="menu">
+
+        <button id="scrollLeft">Rolar Esquerda</button>
+        <button id="scrollTop">Rolar Topo</button>
+        <button id="positionLeft">Posição Esquerda</button>
+        <button id="positionTop">Posição Topo</button>
+        <button id="resetPosition">Resetar Posição</button>
+
+    </div>
+
+    <div id="teste" style="border: 1px solid black; width: 100px; height: 150px; overflow: auto;">
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ipsum suscipit, quo quis doloribus possimus animi qui a odit? Atque laudantium doloremque placeat ipsam non at unde ab voluptates repellendus?        
+
+    </div>
+
+    <script>
+
+        jQuery('#scrollLeft').click(() => {
+            jQuery('#teste').scrollLeft(15)
+        })
+
+        jQuery('#scrollTop').click(() => {
+            jQuery('#teste').scrollTop(15)
+        })
+
+        jQuery('#positionLeft').click(() => {
+            alert(`Posição à esquerda: ${jQuery('#teste').scrollLeft()}.`)
+        })
+
+        jQuery('#positionTop').click(() => {
+            alert(`Posição ao topo: ${jQuery('#teste').scrollTop()}.`)
+        })
+
+        jQuery('#resetPosition').click(() => {
+            jQuery('#teste').scrollLeft(0).scrollTop(0)
+            //jQuery('#teste').scrollTop(0)
+        })
+
+    </script>
+
+</body>
+
+</html>
