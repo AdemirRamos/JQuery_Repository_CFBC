@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 49 - Função "index" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: yellow;
+            border: 2px solid red;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        span {
+            display: block;
+            margin: 15px 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="elementos" class="caixa">
+
+        <span id="p1">CFB Cursos</span>
+        <span id="p2">Curso de jQuery</span>
+        <span id="p3">Função Index</span>
+        <span id="p4">www.cfbcursos.com.br</span>
+        <span id="p5">www.youtube.com/cfbcursos</span>
+
+    </div>
+
+    <p id="p1">CFB Cursos</p>
+    <p id="p2">Curso de jQuery</p>
+    <p id="p3">Função "each()"</p>
+    <p id="p4">cfbcursos.com.br</p>
+    <p id="p5">youtube.com/cfbcursos</p>
+
+    <script>
+
+        //A função "index()" retorna a posição de um determinado elemento dentro da página (posição em relação ao pódio do elemento).
+
+        jQuery('p').click((e) => {
+            alert(`Posição do elemento clicado: ${jQuery(e.currentTarget).index()}.`)
+        })
+
+        jQuery('span').click(function() {
+            alert(`Posição do elemento clicado: ${jQuery(this).index()}.`)
+        })
+
+    </script>
+
+</body>
+
+</html>
