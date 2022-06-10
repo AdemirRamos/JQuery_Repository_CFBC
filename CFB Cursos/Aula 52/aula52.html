@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 52 - Função "toArray" Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: yellow;
+            border: 2px solid red;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        span {
+            display: block;
+            margin: 15px 0;
+        }
+
+        button {
+            margin-top: 15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="caixa" class="caixa">
+
+        <span id="span1">CFB Cursos</span>
+        <span id="span2">Curso de jQuery</span>
+        <span id="span3">Função Index</span>
+        <span id="span4">www.cfbcursos.com.br</span>
+        <span id="span5">www.youtube.com/cfbcursos</span>
+
+    </div>
+
+    <div id="caixa2" class="caixa">
+
+        <p id="p1">CFB Cursos</p>
+        <p id="p2">Curso de jQuery</p>
+        <p id="p3">Função "each()"</p>
+        <p id="p4">cfbcursos.com.br</p>
+        <p id="p5">youtube.com/cfbcursos</p>
+        
+    </div>
+
+    <button id="p_array">Transferir "tags p"</button>
+    <button id="span_array">Transferir "tags span"</button>
+
+    <script>
+
+        let elementos_p = $('p').toArray()
+        let elementos_span = $('span').toArray()
+
+        $('#p_array').click(() => {
+            $('#caixa2').append(elementos_p)
+            $('#caixa').append(elementos_span)
+        })
+
+        $('#span_array').click(() => {
+            $('#caixa2').append(elementos_span)
+            $('#caixa').append(elementos_p)
+        })
+
+    </script>
+
+</body>
+
+</html>
