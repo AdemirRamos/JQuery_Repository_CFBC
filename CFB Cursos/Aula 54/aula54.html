@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 54 - Modificando a Largura e Altura Dos Elementos Em jQuery</title>
+
+    <script src="../JQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        .caixa {
+            background-color: white;
+            width: 200px;
+            height: 280px;
+            padding: 10px;
+            border: 5px solid black;
+            margin: 5px;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <button id="alterar">Alterar</button>
+
+    <div style="display: flex;">
+
+        <div id="caixa1" class="caixa">
+
+            CFB Cursos
+
+        </div>
+
+        <div id="info" class="caixa"></div>
+
+        <img src="Imagens/larguras e alturas.png" alt="Na imagem, são demonstrada diferentes alturas e larguras." width="550px">
+
+    </div>
+
+    <script>
+
+        let caixa = $('#caixa1')
+
+        $('#info').html(
+            `
+            Width: ${caixa.width()} <hr>
+            Height: ${caixa.height()} <hr>
+            Inner Width: ${caixa.innerWidth()} <hr>
+            Inner Height: ${caixa.innerHeight()} <hr>
+            Outer Width: ${caixa.outerWidth()} <hr>
+            Outer Height: ${caixa.outerHeight()} <hr>
+            Outer Width True: ${caixa.outerWidth(true)} <hr>
+            Outer Height True: ${caixa.outerHeight(true)} <hr>
+
+            `
+        )
+
+        $('#alterar').click(() => {
+            caixa.width(300)
+            caixa.height(350)
+            caixa.innerWidth(100)
+        })
+
+    </script>
+
+</body>
+
+</html>
